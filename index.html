@@ -316,7 +316,45 @@
         <br>
         <section id="how-to-run" class="bg-light-card-bg dark:bg-dark-card-bg rounded-lg shadow-xl overflow-hidden p-6 md:p-8 transition-colors duration-300 border border-light-border dark:border-dark-border">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-dark-text mb-6 text-center">How to Run These Chatbots</h2>
-            
+             <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-dark-text">
+                <p>To get any of these Gemini chatbot UIs up and running, follow these simple steps:</p>
+                <br>
+                <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li><strong>Clone Repo & Open index.html:</strong>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Clone Repo from <a href="https://github.com/rakeshdalvi25/gemini-api-chatbot" target="_blank" class="text-primary-accent dark:text-blue-400 hover:underline">https://github.com/rakeshdalvi25/gemini-api-chatbot</a></li>
+                            <li>Then, open the <code>index.html</code> file in your web browser.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Get an API Key:</strong>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Go to <a href="https://aistudio.google.com/" target="_blank" class="text-primary-accent dark:text-blue-400 hover:underline">Google AI Studio</a>.</li>
+                            <li>Create a new API key.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Insert API Key:</strong>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Open the HTML file of the specific chatbot UI you want to run (e.g., <code>csschatbot.html</code>, <code>tailwindchatbot.html</code>, <code>bootstrapchatbot.html</code>) in a text editor.</li>
+                            <li>Locate the JavaScript section (usually at the bottom of the <code>&lt;body&gt;</code> or in a linked <code>.js</code> file).</li>
+                            <li>Find the <code>const API_KEY = "";</code> line and paste your newly generated API key between the double quotes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Save and Open:</strong>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Save the HTML file.</li>
+                            <li>Open the HTML file directly in your web browser.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Start Chatting!</strong>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>The chatbot should now be functional. If the API key is still missing or incorrect, an instructional message will appear in the chat.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="mt-4">
+                    For production environments, consider securing your API key using server-side proxies or environment variables to prevent direct exposure in client-side code.
+                </p>
+            </div>   
         </section>
 
     </main>
