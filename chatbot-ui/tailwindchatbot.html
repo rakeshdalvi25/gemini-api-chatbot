@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://your-chatbot-url.com/images/gemini-chatbot-preview.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gemini Chatbot - Your AI Assistant">
-    <meta property="twitter:description" content="An interactive AI chatbot powered by Google's Gemini, offering quick and helpful responses.">
+    <meta property="twitter:description" content="An interactive AI chatbot powered by Google's sensibly.">
     <meta property="twitter:image" content="https://your-chatbot-url.com/images/gemini-chatbot-preview.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -31,17 +31,90 @@
                     },
                     colors: {
                         // Custom colors can be added here if needed
+                        'chat-user-bg': '#3B82F6', // A distinct blue for user messages
+                        'chat-bot-bg': '#374151',  // A darker gray for bot messages
+                        'chat-text-light': '#FFFFFF', // White text for user messages
+                        'chat-text-dark': '#E5E7EB', // Light gray text for bot messages
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Custom styles to enhance chat bubbles and loading indicator */
+
+        /* Base chat message styling */
+        .chat-message {
+            @apply flex items-start gap-3; /* Align items with space between avatar and content */
+            max-width: 90%; /* Prevent messages from spanning entire width */
+        }
+
+        /* User message specific styling */
+        .user-message {
+            @apply ml-auto justify-end; /* Push user messages to the right */
+        }
+
+        .user-message .message-content {
+            @apply bg-chat-user-bg text-chat-text-light rounded-2xl rounded-tr-none p-3 shadow-md;
+            word-wrap: break-word; /* Ensure long words break */
+            max-width: calc(100% - 40px); /* Account for avatar space */
+        }
+
+        /* Bot message specific styling */
+        .bot-message {
+            @apply mr-auto justify-start; /* Keep bot messages to the left */
+        }
+
+        .bot-message .message-content {
+            @apply bg-chat-bot-bg text-chat-text-dark rounded-2xl rounded-tl-none p-3 shadow-md;
+            word-wrap: break-word; /* Ensure long words break */
+            max-width: calc(100% - 40px); /* Account for avatar space */
+        }
+
+        /* Avatar styling */
+        .message-avatar {
+            @apply text-2xl sm:text-3xl mt-1 flex-shrink-0; /* Larger avatar, prevent shrinking */
+            color: #9CA3AF; /* Light gray for avatar icons */
+        }
+        .user-message .message-avatar {
+            order: 2; /* Place avatar after content for user messages */
+        }
+        .bot-message .message-avatar {
+            order: 1; /* Place avatar before content for bot messages */
+        }
+
+        /* Loading dots animation */
+        .loading-dots span {
+            animation: bounce 1s infinite;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+        }
+
+        /* Error message styling */
+        .error-message {
+            @apply text-red-400 bg-red-900 bg-opacity-30 border border-red-800 rounded-lg p-3;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body class="flex flex-col min-h-screen overflow-x-hidden bg-gray-900 text-gray-100 transition-colors duration-300">
     <nav class="navbar bg-gray-800 p-4 sm:p-5 flex justify-between items-center shadow-lg sticky top-0 w-full z-50 border-b border-gray-700">
         <div class="navbar-brand text-xl sm:text-2xl font-bold flex items-center gap-2">
             <span class="material-symbols-rounded text-xl sm:text-2xl">robot_2</span>
-            Gemini Chat
+            <a href="../index.html">Gemini Chat</a>
         </div>
         <div class="nav-links hidden md:flex gap-6">
             <a href="#" class="text-sm sm:text-base text-gray-100 font-medium hover:text-blue-500 transition-colors duration-200">Home</a>
@@ -84,6 +157,39 @@
     </header>
 
     <main class="chat-list flex-grow p-3 sm:p-5 overflow-y-auto flex flex-col gap-3 sm:gap-4 max-w-3xl w-full mx-auto pb-24">
+        <div class="chat-message user-message">
+            <div class="message-content">Give me ideas for a birthday party for a 5-year-old.</div>
+            <span class="material-symbols-rounded message-avatar">person</span>
+        </div>
+
+        <div class="chat-message bot-message">
+            <span class="material-symbols-rounded message-avatar">robot_2</span>
+            <div class="message-content">
+                <p>Absolutely! Here are some ideas for a 5-year-old's birthday party:</p>
+                <ul class="list-disc pl-5 mt-2">
+                    <li>**Superhero Training Academy:** Set up obstacle courses, "villain" targets (cardboard cutouts), and have kids design their own superhero masks.</li>
+                    <li>**Magical Forest Adventure:** Decorate with fairy lights and leaves. Have a treasure hunt for "magical" items.</li>
+                    <li>**Dinosaur Dig:** Bury plastic dinosaurs and bones in a sandbox for kids to excavate. Provide brushes and shovels.</li>
+                    <li>**Pirate Treasure Hunt:** Create a map leading to hidden treasure (party favors). Kids can dress up as pirates.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="chat-message bot-message">
+            <span class="material-symbols-rounded message-avatar">robot_2</span>
+            <div class="message-content loading-dots">
+                <span>.</span><span>.</span><span>.</span>
+            </div>
+        </div>
+
+        <div class="chat-message user-message">
+            <div class="message-content">How can I make an AI more engaging?</div>
+            <span class="material-symbols-rounded message-avatar">person</span>
+        </div>
+
+        <div class="error-message">
+            **Error:** There was an issue processing your request. Please check your API key or network connection.
+        </div>
         </main>
 
     <div class="typing-form-wrapper sticky bottom-0 w-full bg-gray-900 border-t border-gray-700 p-3 sm:p-4 shadow-lg z-20">
