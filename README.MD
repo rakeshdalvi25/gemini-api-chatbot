@@ -42,17 +42,28 @@ Each UI demo focuses on a different front-end approach, providing a distinct use
 A lightweight and highly controlled implementation, crafted purely with custom CSS. This version prioritizes minimal external dependencies and offers complete styling flexibility.
 
 **Pure CSS Chatbot UI (Light Mode):**
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/css-light.png">
+</div>
 
 **Pure CSS Chatbot UI (Dark Mode):**
-
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/css-dark.png">
+</div>
 
 ### Tailwind CSS Chatbot UI
 
 A sleek and highly customizable UI, built efficiently with Tailwind CSS utility classes. It offers rapid development and a modern, consistent design, leveraging Tailwind's utility-first approach.
 
 **Tailwind CSS Chatbot UI (Light Mode):**
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/tailwind-light.png">
+</div>
 
 **Tailwind CSS Chatbot UI (Dark Mode):**
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/tailwind-light.png">
+</div>
 
 
 ### Bootstrap 5 Chatbot UI
@@ -60,9 +71,14 @@ A sleek and highly customizable UI, built efficiently with Tailwind CSS utility 
 A robust and responsive interface, leveraging Bootstrap 5's comprehensive components and utility classes for a familiar and accessible user experience.
 
 **Bootstrap 5 Chatbot UI (Light Mode):**
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/bs5-light.png">
+</div>
 
 **Bootstrap 5 Chatbot UI (Dark Mode):**
-
+<div align="center">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/bs5-light.png">
+</div>
 
 
 ## Steps to Run the Gemini API Chatbot
