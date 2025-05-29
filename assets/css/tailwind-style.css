@@ -1,0 +1,213 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+body.light_mode {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+body.light_mode .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom-color: #ddd;
+}
+
+body.light_mode .nav-links a {
+    color: #555;
+}
+
+body.light_mode .nav-links a:hover {
+    color: #4285F4;
+}
+
+body.light_mode .action-buttons button {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #ddd;
+    box-shadow: none;
+}
+
+body.light_mode .action-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+body.light_mode .header {
+    background-color: #f0f2f5;
+}
+
+body.light_mode .header p {
+    color: #666;
+}
+
+body.light_mode .suggestions-container .suggestion {
+    background-color: #fff;
+    border-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.light_mode .suggestions-container .suggestion:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+body.light_mode .incoming {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+body.light_mode .message .copy-icon {
+    color: #777;
+}
+
+body.light_mode .message .copy-icon:hover {
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light_mode .typing-form-wrapper {
+    background-color: #f0f2f5;
+    border-top-color: #ddd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light_mode .typing-input {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+
+body.hide-header .header {
+    transform: translateY(-100%);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.loading-bar {
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-bar:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.loading-bar:nth-child(3) {
+    animation-delay: 0s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Removed .stop-button { display: none; } as Tailwind's hidden class handles this */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    width: 400px;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #4299e1;
+}
+
+.modal-body {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.modal-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modal-button.primary {
+    background-color: #4299e1;
+    color: white;
+}
+
+.modal-button.primary:hover {
+    background-color: #3182ce;
+    transform: translateY(-1px);
+}
+
+.modal-button.secondary {
+    background-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.modal-button.secondary:hover {
+    background-color: #2d3748;
+    transform: translateY(-1px);
+}
+
+.chat-list .message {
+    position: relative;
+    padding-right: 2.5rem;
+}
+
+.message .copy-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
