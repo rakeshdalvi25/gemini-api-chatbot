@@ -62,7 +62,7 @@ A sleek and highly customizable UI, built efficiently with Tailwind CSS utility 
 
 **Tailwind CSS Chatbot UI (Dark Mode):**
 <div align="center">
-  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/tailwind-light.png">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/tailwind-dark.png">
 </div>
 
 
@@ -77,7 +77,7 @@ A robust and responsive interface, leveraging Bootstrap 5's comprehensive compon
 
 **Bootstrap 5 Chatbot UI (Dark Mode):**
 <div align="center">
-  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/bs5-light.png">
+  <img src="https://rakeshdalvi25.github.io/gemini-api-chatbot/assets/img/screenshots/bs5-dark.png">
 </div>
 
 
